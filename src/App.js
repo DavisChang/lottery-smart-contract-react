@@ -12,7 +12,11 @@ class App extends Component {
     message: ''
   };
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.update();
+  }
+
+  update = async () => {
     const manager = await lottery.methods.manager().call();
     const players = await lottery.methods.getPlayers().call();
     const balance = await web3.eth.getBalance(lottery.options.address); 
@@ -37,6 +41,7 @@ class App extends Component {
       value: web3.utils.toWei(this.state.value, 'ether')
     });
 
+    this.update();
     this.setState({ message: 'You have been entered!' });
   }
 
@@ -49,6 +54,7 @@ class App extends Component {
       from: accounts[0]
     });
 
+    this.update();
     this.setState({ message: 'A winner has been picked!' });
   }
 
@@ -69,6 +75,7 @@ class App extends Component {
           <div>
             <label>Amount of ether to enter: </label>
             <input
+              type="number"
               value={this.state.value}
               onChange={this.onChangeHandler}
             />
