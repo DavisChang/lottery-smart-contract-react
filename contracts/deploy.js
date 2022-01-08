@@ -3,7 +3,7 @@ const Web3 = require('web3')
 const { abi, evm } = require('../compile')
 
 const provider = new HDWalletProvider(
-  '',
+  'carpet atom flag hub shine unlock resist misery short plastic goat rose',
   'https://mainnet.infura.io/v3/9428e1df1bdd468e9c748fdf057ebbf9'
 )
 
