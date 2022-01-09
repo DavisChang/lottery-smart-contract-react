@@ -1,10 +1,11 @@
 ## lottery-smart-contract-react
 
-Need to prepare Contract Address and Application Binary Interface(ABI) for this project.
+Need to prepare some data for HDWalletProvider.
 
-```js
-// lottery.js
-const address = ...;
-const abi = ...;
+```bash
+# Test contract
+cd contracts && npm install && npm run test
 
+# Run frontend project
+cd lottery-fe && npm install && npm start
 ```
